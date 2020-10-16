@@ -1,6 +1,90 @@
 import assert from 'assert';
 
-/** Exercicio Um - Descubra o número Primo */
+
+/** Exercicio Um - Valor Par ou Impar */
+
+var ehPar = function (numero) {
+    return (numero % 2 === 0) ? true : false
+}
+
+try {
+    assert.ok(ehPar(8))
+    assert.ok(!ehPar(7))
+    assert.ok(ehPar(0))
+    console.log('Teste 1 - OK');
+
+} catch (error) {
+    console.log(error);
+}
+
+/** Exercicio Dois - Positivo ou Negativo */
+
+var ehPositivo = function (numero) {
+    return (numero >= 0) ? 1 : 0
+}
+
+try {
+    assert.strictEqual(1, ehPositivo(100))
+    assert.strictEqual(1, ehPositivo(0))
+    assert.strictEqual(0, ehPositivo(-100))
+    console.log('Teste 2 - OK');
+
+} catch (error) {
+    console.log(error);
+}
+
+
+/** Exercicio TrÊs - Maior que 10 */
+
+var ehMaiorQue10 = function (valorQualquer) {
+    return (valorQualquer > 10) ? 1 : 0
+}
+
+try {
+    assert.strictEqual(1, ehMaiorQue10(17))
+    assert.strictEqual(0, ehMaiorQue10(9))
+    console.log('Teste 3 - OK');
+
+} catch (error) {
+    console.log(error);
+}
+
+
+/** Exercicio Quatro - Celsius / Fahrenheit */
+
+/** Fórmula C/5 = (F - 32)/9 */
+
+function toCelsius(fahrenheit) {
+    return 5 * (fahrenheit - 32) / 9
+
+
+}
+
+function toFahrenheit(celsius) {
+    return  celsius /5 * 9 + 32
+
+}
+
+
+try {
+    var celsius = 100
+    var fahrenheit = 212
+
+    assert.strictEqual(celsius, toCelsius(fahrenheit),"msg");
+    assert.strictEqual(fahrenheit, toFahrenheit(celsius),"msg");
+    console.log('Teste 4 - OK')
+
+} catch (error) {
+    console.log(error);
+}
+
+
+
+
+/** Exercicio Cinco - Descubra o número Primo */
+
+
+/** Exercicio Seis - Descubra o número Primo */
 
 var ehPrimo = function (num) {
 
@@ -35,13 +119,13 @@ try {
     assert.strictEqual(0, ehPrimo(10))
     assert.strictEqual(0, ehPrimo(12))
 
-    console.log('Teste 1 - OK');
+    console.log('Teste 6 - OK');
 
 } catch (error) {
     console.log(error);
 }
 
-/**Exercicio Dois - Somar Dígitos */
+/**Exercicio Sete - Somar Dígitos */
 /**Dado o número 2015 o retorno deve ser 2 + 0 + 1 + 5 = 8 */
 
 var somarDigitos = function (numero) {
@@ -60,13 +144,13 @@ var somarDigitos = function (numero) {
 try {
     assert.strictEqual(8, somarDigitos(2015))
     assert.strictEqual(15, somarDigitos(456))
-    console.log('Teste 2 - OK');
+    console.log('Teste 7 - OK');
 } catch (error) {
     console.log(error);
 }
 
 
-/**Exercicio Três - MDC */
+/**Exercicio Oito - MDC */
 
 var mdc = function (num1, num2) {
 
@@ -96,14 +180,14 @@ var mdc = function (num1, num2) {
 try {
     assert.strictEqual(3, mdc(24, 9))
     assert.strictEqual(10, mdc(30, 20))
-    console.log('Teste 3 - OK');
+    console.log('Teste 8 - OK');
 } catch (error) {
     console.log(error);
 }
 
 
 
-/**Exercicio Quatro - MMC */
+/**Exercicio Nove - MMC */
 
 var mmc = function (num1, num2) {
     let resto, resultado1, resultado2
@@ -125,7 +209,7 @@ var mmc = function (num1, num2) {
 
 try {
     assert.strictEqual(60, mmc(12, 20))
-    console.log('Teste 4 - OK');
+    console.log('Teste 9 - OK');
 } catch (error) {
     console.log(error);
 }
