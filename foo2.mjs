@@ -41,8 +41,29 @@ try {
     console.log(error);
 }
 
-/**Exercicio Dois - O dobro de qualquer número */
+/**Exercicio Dois - Somar Dígitos */
+/**Dado o número 2015 o retorno deve ser 2 + 0 + 1 + 5 = 8 */
 
+var somarDigitos = function (numero) {
+
+    let somatorio = 0
+
+    while (numero > 0) {
+        somatorio += numero % 10
+        numero = parseInt(numero / 10)
+    }
+    
+    return somatorio
+
+}
+
+try {
+    assert.strictEqual(8, somarDigitos(2015))
+    assert.strictEqual(15, somarDigitos(456))
+    console.log('Teste 2 - OK');
+} catch (error) {
+    console.log(error);
+}
 
 
 /**Exercicio Três - Area quadrada */
