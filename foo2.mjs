@@ -52,7 +52,7 @@ var somarDigitos = function (numero) {
         somatorio += numero % 10
         numero = parseInt(numero / 10)
     }
-    
+
     return somatorio
 
 }
@@ -66,7 +66,38 @@ try {
 }
 
 
-/**Exercicio Três - Area quadrada */
+/**Exercicio Três - MDC */
+
+var mdc = function (num1, num2) {
+    let ehMaior = num1 > num2
+    let maior, menor
+    if (ehMaior) {
+        maior = num1
+        menor = num2
+    } else {
+        maior = num2
+        menor = num1
+    }
+
+    let resto = maior % menor
+
+    while (resto !== 0) {
+        resto = maior % menor
+        maior = menor
+        menor = resto
+    }
+
+    return maior
+
+}
+
+try {
+    assert.strictEqual(3, mdc(24, 9))
+    assert.strictEqual(10, mdc(30, 20))
+    console.log('Teste 3 - OK');
+} catch (error) {
+    console.log(error);
+}
 
 
 
