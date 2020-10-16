@@ -88,7 +88,6 @@ try {
 
 var delta = function (a, b, c) {
     return Math.sqrt(b) - 4 * a * c
-
 }
 
 var raiz1 = function (a, b, c) {
