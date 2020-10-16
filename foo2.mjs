@@ -61,7 +61,7 @@ function toCelsius(fahrenheit) {
 }
 
 function toFahrenheit(celsius) {
-    return  celsius /5 * 9 + 32
+    return celsius / 5 * 9 + 32
 
 }
 
@@ -70,18 +70,49 @@ try {
     var celsius = 100
     var fahrenheit = 212
 
-    assert.strictEqual(celsius, toCelsius(fahrenheit),"msg");
-    assert.strictEqual(fahrenheit, toFahrenheit(celsius),"msg");
+    assert.strictEqual(celsius, toCelsius(fahrenheit), "msg");
+    assert.strictEqual(fahrenheit, toFahrenheit(celsius), "msg");
     console.log('Teste 4 - OK')
 
 } catch (error) {
     console.log(error);
 }
 
+/** Exercicio Cinco - Equação do 2 Grau */
+/**Fórmula
+ * ax(2) + bx + c = 0
+   delta = (Δ = b2 - 4.a.c)
+   x1    = ( (-b + √Δ)/2a)
+   x2    = ( (-b - √Δ)/2a)
+ */
 
+var delta = function (a, b, c) {
+    return Math.sqrt(b) - 4 * a * c
 
+}
 
-/** Exercicio Cinco - Descubra o número Primo */
+var raiz1 = function (a, b, c) {
+    return (-b + Math.sqrt(delta(a, b, c))) / (2 * a)
+}
+
+var raiz2 = function (a, b, c) {
+    return (-b - Math.sqrt(delta(a, b, c))) / (2 * a)
+}
+
+try {
+
+    var a = 1
+    var b = 0
+    var c = -16
+
+    assert.strictEqual(64, delta(a, b, c));
+    assert.strictEqual(4, raiz1(a, b, c));
+    assert.strictEqual(-4, raiz2(a, b, c));
+    console.log('Teste 5 - OK');
+
+} catch (error) {
+    console.log(error);
+}
 
 
 /** Exercicio Seis - Descubra o número Primo */
