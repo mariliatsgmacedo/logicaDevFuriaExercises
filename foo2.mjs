@@ -69,8 +69,10 @@ try {
 /**Exercicio Três - MDC */
 
 var mdc = function (num1, num2) {
+
     let ehMaior = num1 > num2
     let maior, menor
+
     if (ehMaior) {
         maior = num1
         menor = num2
@@ -101,17 +103,31 @@ try {
 
 
 
-/**Exercicio Quatro - Antecessor e Sucessor */
+/**Exercicio Quatro - MMC */
+
+var mmc = function (num1, num2) {
+    let resto, resultado1, resultado2
+
+    resultado1 = num1
+    resultado2 = num2
+
+    do {
+        resto = resultado1 % resultado2
+        resultado1 = resultado2
+        resultado2 = resto
+    }
+    while (resto > 0) {
+    }
+
+    return (num1 * num2) / resultado1
+
+}
+
+try {
+    assert.strictEqual(60, mmc(12, 20))
+    console.log('Teste 4 - OK');
+} catch (error) {
+    console.log(error);
+}
 
 
-/**Exercicio Cinco - Média de três números */
-
-/**Exercicio Seis - Descobrir os dias de N meses */
-
-/**Exercicio Sete - Funções matemáticas */
-
-/**Exercicio Oito - Custo de um carro novo */
-
-/**Exercicio Nove - Juros Simples */
-
-/**Exercicio Nove - Juros Simples */
